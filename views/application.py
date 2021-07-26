@@ -201,7 +201,7 @@ def write():
         blue_transformed = pca.fit_transform(blue)
         blue_inverted = pca.inverse_transform(blue_transformed)
 
-        img_compressed = (np.dstack((red_inverted, red_inverted, red_inverted))).astype(np.uint8)
+        img_compressed = (np.dstack((red_inverted, green_inverted, blue_inverted))).astype(np.uint8)
         
         col2.header("PCAscale")
         col2.image(img_compressed, use_column_width=True)
